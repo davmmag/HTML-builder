@@ -6,10 +6,10 @@ readdir(filePath('secret-folder'), {withFileTypes: true})
   .then(files => {
     files = files.filter(f => f.isFile());
     for(let file of files) {
-      const pathFile = filePath(`./secret-folder\\${file.name}`);
-      const parsedFile = parse(pathFile);
-      stat(pathFile).then(file => {
-        console.log(`${parsedFile.name} -- ${parsedFile.ext.slice(1)} -- ${file.size}b`);
+      const PATH_FILE = filePath(`./secret-folder\\${file.name}`);
+      const PARSED_FILE = parse(PATH_FILE);
+      stat(PATH_FILE).then(file => {
+        console.log(`${PARSED_FILE.name} -- ${PARSED_FILE.ext.slice(1)} -- ${file.size}b`);
       });
     }
   });
